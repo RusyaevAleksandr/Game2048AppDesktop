@@ -37,7 +37,6 @@ namespace Game2048App
             int x = 10 + indexColumn * 76;
             int y = 70 + indexRow * 76;
             label.Location = new Point(x, y);
-            //SuspendLayout();
             label.BackColor = SystemColors.ControlDark;
             label.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label.Size = new Size(70, 70);
