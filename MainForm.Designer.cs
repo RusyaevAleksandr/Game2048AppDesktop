@@ -36,7 +36,7 @@
             // 
             scoreTextLabel.AutoSize = true;
             scoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            scoreTextLabel.Location = new Point(200, 9);
+            scoreTextLabel.Location = new Point(229, 10);
             scoreTextLabel.Name = "scoreTextLabel";
             scoreTextLabel.Size = new Size(47, 21);
             scoreTextLabel.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             scoreLabel.AutoSize = true;
             scoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            scoreLabel.Location = new Point(253, 9);
+            scoreLabel.Location = new Point(289, 10);
             scoreLabel.Name = "scoreLabel";
             scoreLabel.Size = new Size(19, 21);
             scoreLabel.TabIndex = 1;
@@ -54,11 +54,12 @@
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(319, 406);
+            ClientSize = new Size(365, 460);
             Controls.Add(scoreLabel);
             Controls.Add(scoreTextLabel);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "MainForm";
             Text = "Игра 2048";
             Load += MainForm_Load;
