@@ -20,7 +20,9 @@ namespace Game2048App
         private void MainForm_Load(object sender, EventArgs e)
         {
             InitMap();
+
             GenerateNumber();
+
             ShowScore();
         }
 
