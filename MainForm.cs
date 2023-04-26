@@ -1,3 +1,5 @@
+using Game2048WindowsFormApp;
+
 namespace Game2048App
 {
     public partial class MainForm : Form
@@ -290,6 +292,22 @@ namespace Game2048App
             GenerateNumber();
 
             ShowScore();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void restartGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void rulesGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RulesGameForm rulesGameForm = new RulesGameForm();
+            rulesGameForm.ShowDialog();
         }
     }
 }
