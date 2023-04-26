@@ -79,6 +79,7 @@ namespace Game2048App
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
+            #region Key Right
             if (e.KeyCode == Keys.Right)
             {
                 for (int i = 0; i < mapSize; i++)
@@ -130,7 +131,9 @@ namespace Game2048App
                     }
                 }
             }
+            #endregion
 
+            #region Key Left
             if (e.KeyCode == Keys.Left)
             {
                 for (int i = 0; i < mapSize; i++)
@@ -182,7 +185,9 @@ namespace Game2048App
                     }
                 }
             }
+            #endregion
 
+            #region Key Up
             if (e.KeyCode == Keys.Up)
             {
                 for (int j = 0; j < mapSize; j++)
@@ -235,7 +240,9 @@ namespace Game2048App
                     }
                 }
             }
+            #endregion
 
+            #region Key Down
             if (e.KeyCode == Keys.Down)
             {
                 for (int j = 0; j < mapSize; j++)
@@ -288,7 +295,7 @@ namespace Game2048App
                     }
                 }
             }
-
+            #endregion
             GenerateNumber();
 
             ShowScore();
@@ -307,6 +314,7 @@ namespace Game2048App
         private void rulesGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RulesGameForm rulesGameForm = new RulesGameForm();
+
             rulesGameForm.ShowDialog();
         }
     }
