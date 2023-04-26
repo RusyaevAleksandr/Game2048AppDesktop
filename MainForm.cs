@@ -296,6 +296,7 @@ namespace Game2048App
                 }
             }
             #endregion
+
             GenerateNumber();
 
             ShowScore();

@@ -28,18 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridView1 = new DataGridView();
+            rulesGameColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { rulesGameColumn });
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(684, 361);
+            dataGridView1.TabIndex = 0;
+            // 
+            // rulesGameColumn
+            // 
+            rulesGameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            rulesGameColumn.HeaderText = "Правила Игры 2048";
+            rulesGameColumn.Name = "rulesGameColumn";
             // 
             // RulesGameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(684, 361);
+            Controls.Add(dataGridView1);
             Name = "RulesGameForm";
             Text = "Правила игры";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn rulesGameColumn;
     }
 }
