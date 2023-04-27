@@ -1,5 +1,5 @@
-using Common;
-using Game2048WindowsFormApp;
+using Game2048App.Common;
+using Game2048WindowsForApp;
 
 namespace Game2048App
 {
@@ -9,9 +9,15 @@ namespace Game2048App
 
         private const int mapSize = 4;
 
+        private const int cellSpacing = 6;
+
+        private const int cellSize = 70;
+
         private static Random random = new Random();
 
         private int score = 0;
+
+        private User user = new User("User");
 
         public MainForm()
         {
@@ -20,6 +26,10 @@ namespace Game2048App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            user.Name = StaticData.DataBuffer;
+
+            userLabel.Text = $"Игрок: {user.Name}";
+
             InitMap();
 
             GenerateNumber();
@@ -40,7 +50,7 @@ namespace Game2048App
 
                 var indexRow = randomNumberLabel / mapSize;
 
-                var indexColumn = randomNumberLabel % mapSize;                
+                var indexColumn = randomNumberLabel % mapSize;
 
                 if (labelsMap[indexRow, indexColumn].Text == string.Empty)
                 {
@@ -71,12 +81,12 @@ namespace Game2048App
         private Label newCreateLabel(int indexRow, int indexColumn)
         {
             var label = new Label();
-            int x = 10 + indexColumn * 76;
-            int y = 70 + indexRow * 76;
+            int x = 10 + indexColumn * (cellSize + cellSpacing);
+            int y = 100 + indexRow * (cellSize + cellSpacing);
             label.Location = new Point(x, y);
             label.BackColor = SystemColors.ControlDark;
             label.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label.Size = new Size(70, 70);
+            label.Size = new Size(cellSize, cellSize);
             label.TabIndex = 0;
             label.TextAlign = ContentAlignment.MiddleCenter;
             return label;
@@ -311,6 +321,10 @@ namespace Game2048App
         {
             Application.Exit();
         }
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
         private void restartGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -322,6 +336,11 @@ namespace Game2048App
             RulesGameForm rulesGameForm = new RulesGameForm();
 
             rulesGameForm.ShowDialog();
+        }
+
+        private void saveResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Game2048WindowsFormApp
+﻿namespace Game2048WindowsForApp
 {
     partial class RulesGameForm
     {

@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Game2048App.Common
 {
     public class MainLogicApp
     {

@@ -1,4 +1,4 @@
-﻿namespace Game2048WindowsFormApp
+﻿namespace Game2048WindowsForApp
 {
     partial class AuthenticationForm
     {
@@ -38,7 +38,7 @@
             // 
             welcomeLabel.AutoSize = true;
             welcomeLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            welcomeLabel.Location = new Point(201, 9);
+            welcomeLabel.Location = new Point(106, 9);
             welcomeLabel.Name = "welcomeLabel";
             welcomeLabel.Size = new Size(258, 30);
             welcomeLabel.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nameLabel.Location = new Point(12, 111);
+            nameLabel.Location = new Point(12, 97);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(103, 21);
             nameLabel.TabIndex = 1;
@@ -56,26 +56,27 @@
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(121, 111);
+            nameTextBox.Location = new Point(12, 133);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(551, 23);
+            nameTextBox.Size = new Size(460, 23);
             nameTextBox.TabIndex = 2;
             // 
             // startButton
             // 
             startButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            startButton.Location = new Point(289, 311);
+            startButton.Location = new Point(155, 261);
             startButton.Name = "startButton";
             startButton.Size = new Size(154, 38);
             startButton.TabIndex = 3;
             startButton.Text = "Начать игру";
             startButton.UseVisualStyleBackColor = true;
+            startButton.Click += startButton_Click;
             // 
             // AuthenticationForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 361);
+            ClientSize = new Size(484, 311);
             Controls.Add(startButton);
             Controls.Add(nameTextBox);
             Controls.Add(nameLabel);

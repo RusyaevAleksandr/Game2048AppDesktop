@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Common
+namespace Game2048App.Common
 {
     public class FileProvider
     {
@@ -49,6 +49,7 @@ namespace Common
             using (StreamReader sr = new StreamReader(nameFile, Encoding.Default))
             {
                 string textResult = sr.ReadToEnd();
+
                 return textResult;
             }
         }
