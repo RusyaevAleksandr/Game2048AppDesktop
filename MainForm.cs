@@ -1,3 +1,4 @@
+using Common;
 using Game2048WindowsFormApp;
 
 namespace Game2048App
@@ -20,7 +21,9 @@ namespace Game2048App
         private void MainForm_Load(object sender, EventArgs e)
         {
             InitMap();
+
             GenerateNumber();
+
             ShowScore();
         }
 
@@ -37,11 +40,11 @@ namespace Game2048App
 
                 var indexRow = randomNumberLabel / mapSize;
 
-                var indexColumn = randomNumberLabel % mapSize;
+                var indexColumn = randomNumberLabel % mapSize;                
 
                 if (labelsMap[indexRow, indexColumn].Text == string.Empty)
                 {
-                    labelsMap[indexRow, indexColumn].Text = "2";
+                    labelsMap[indexRow, indexColumn].Text = MainLogicApp.ShowRandomNumber();
 
                     break;
                 }
@@ -57,7 +60,9 @@ namespace Game2048App
                 for (int j = 0; j < mapSize; j++)
                 {
                     var newLabel = newCreateLabel(i, j);
+
                     Controls.Add(newLabel);
+
                     labelsMap[i, j] = newLabel;
                 }
             }
