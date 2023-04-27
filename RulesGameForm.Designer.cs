@@ -47,7 +47,7 @@
             // rulesGameColumn
             // 
             rulesGameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            rulesGameColumn.HeaderText = "Основные правила Игры 2048";
+            rulesGameColumn.HeaderText = "Правила Игры 2048";
             rulesGameColumn.Name = "rulesGameColumn";
             // 
             // RulesGameForm
@@ -58,7 +58,6 @@
             Controls.Add(dataGridView1);
             Name = "RulesGameForm";
             Text = "Правила игры";
-            Load += RulesGameForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
