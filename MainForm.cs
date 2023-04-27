@@ -13,6 +13,10 @@ namespace Game2048App
 
         private const int cellSize = 70;
 
+        private const int indentLeftAxisX = 10;
+
+        private const int indentTopAxisY = 100;
+
         private static Random random = new Random();
 
         private int score = 0;
@@ -81,8 +85,8 @@ namespace Game2048App
         private Label newCreateLabel(int indexRow, int indexColumn)
         {
             var label = new Label();
-            int x = 10 + indexColumn * (cellSize + cellSpacing);
-            int y = 100 + indexRow * (cellSize + cellSpacing);
+            int x = indentLeftAxisX + indexColumn * (cellSize + cellSpacing);
+            int y = indentTopAxisY + indexRow * (cellSize + cellSpacing);
             label.Location = new Point(x, y);
             label.BackColor = SystemColors.ControlDark;
             label.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
