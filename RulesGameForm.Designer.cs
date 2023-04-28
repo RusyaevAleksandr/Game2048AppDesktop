@@ -1,4 +1,4 @@
-﻿namespace Game2048WindowsFormApp
+﻿namespace Game2048WindowsForApp
 {
     partial class RulesGameForm
     {
@@ -28,43 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            rulesGameColumn = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ListViewItem listViewItem1 = new ListViewItem("Основные положения:");
+            rulesGameListView = new ListView();
             SuspendLayout();
             // 
-            // dataGridView1
+            // rulesGameListView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { rulesGameColumn });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(684, 361);
-            dataGridView1.TabIndex = 0;
-            // 
-            // rulesGameColumn
-            // 
-            rulesGameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            rulesGameColumn.HeaderText = "Правила Игры 2048";
-            rulesGameColumn.Name = "rulesGameColumn";
+            rulesGameListView.Dock = DockStyle.Fill;
+            rulesGameListView.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rulesGameListView.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            rulesGameListView.Location = new Point(0, 0);
+            rulesGameListView.Name = "rulesGameListView";
+            rulesGameListView.Size = new Size(1184, 361);
+            rulesGameListView.TabIndex = 0;
+            rulesGameListView.UseCompatibleStateImageBehavior = false;
+            rulesGameListView.View = View.List;
             // 
             // RulesGameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 361);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1184, 361);
+            Controls.Add(rulesGameListView);
             Name = "RulesGameForm";
             Text = "Правила игры";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += RulesGameForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn rulesGameColumn;
+        private ListView rulesGameListView;
     }
 }
