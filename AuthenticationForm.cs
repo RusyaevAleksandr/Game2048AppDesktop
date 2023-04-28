@@ -16,7 +16,7 @@ namespace Game2048WindowsForApp
         {
             user.Name = nameTextBox.Text;
 
-            StaticData.DataBuffer = user.Name;
+            StaticData.DataBufferUserName = user.Name;
 
             this.Hide();
 

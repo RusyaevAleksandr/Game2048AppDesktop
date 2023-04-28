@@ -1,5 +1,6 @@
 using Game2048App.Common;
 using Game2048WindowsForApp;
+using Game2048WindowsFormApp;
 
 namespace Game2048App
 {
@@ -30,9 +31,11 @@ namespace Game2048App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            user.Name = StaticData.DataBuffer;
+            user.Name = StaticData.DataBufferUserName;
 
             userLabel.Text = $"Игрок: {user.Name}";
+
+            bestScoreLabel.Text = StaticData.DataBufferUserScore.ToString();
 
             InitMap();
 
@@ -344,7 +347,16 @@ namespace Game2048App
 
         private void saveResultToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            user.Score = score;
 
+            UserRepository.AppendUserResult(user);
+        }
+
+        private void resultListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResultGameForm resultGameForm = new ResultGameForm();
+
+            resultGameForm.ShowDialog();
         }
     }
 }

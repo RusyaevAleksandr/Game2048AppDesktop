@@ -8,14 +8,14 @@ namespace Game2048App.Common
 
         public static void AppendUserResult(User user)
         {
-            var userResult = GetUserResult();
+            var userResult = GetUserResults();
 
             userResult.Add(user);
 
             Save(userResult);
         }
 
-        private static List<User> GetUserResult()
+        public static List<User> GetUserResults()
         {
             if (!FileProvider.Exists(fileProvider.NameFileResultGame))
             {

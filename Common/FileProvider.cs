@@ -4,20 +4,30 @@ namespace Game2048App.Common
 {
     public class FileProvider
     {
-        private const string path = @"Settings";
+        private string path = @"Settings";
 
-        private const string nameFileResultGame = @"Settings\ResultGame.json";
+        private string nameFileResultGame = @"Settings\ResultGame.json";
+
+        private string nameFileRulesGame = @"Settings\RulesGame.json";
 
         public string Path
         {
             get { return path; }
+            set { path = value; }
         }
         public string NameFileResultGame
         {
             get { return nameFileResultGame; }
+            set { nameFileResultGame = value; }
         }
 
-        public void AppendToFile(string path, string nameFile, string value)
+        public string NameFileRulesGame
+        {
+            get { return nameFileRulesGame; }
+            set { nameFileRulesGame = value; }
+        }
+
+        public static void AppendToFile(string path, string nameFile, string value)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
 

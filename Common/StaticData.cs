@@ -2,6 +2,8 @@
 {
     public static class StaticData
     {
-        public static String DataBuffer = String.Empty;
+        public static String DataBufferUserName = String.Empty;
+
+        public static String DataBufferUserScore = String.Empty;
     }
 }
