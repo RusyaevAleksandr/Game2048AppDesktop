@@ -12,7 +12,7 @@ namespace Game2048App
 
         private const int cellSpacing = 6;
 
-        private const int cellSize = 70;
+        private const int cellSize = 80;
 
         private const int indentLeftAxisX = 10;
 
