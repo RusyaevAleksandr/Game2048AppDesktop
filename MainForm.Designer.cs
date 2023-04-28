@@ -138,17 +138,17 @@
             // 
             bestScoreTextLabel.AutoSize = true;
             bestScoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bestScoreTextLabel.Location = new Point(185, 37);
+            bestScoreTextLabel.Location = new Point(203, 37);
             bestScoreTextLabel.Name = "bestScoreTextLabel";
-            bestScoreTextLabel.Size = new Size(107, 21);
+            bestScoreTextLabel.Size = new Size(104, 21);
             bestScoreTextLabel.TabIndex = 4;
-            bestScoreTextLabel.Text = "Лучший счет:";
+            bestScoreTextLabel.Text = "Лучший счет";
             // 
             // scoreTextLabel2
             // 
             scoreTextLabel2.AutoSize = true;
             scoreTextLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            scoreTextLabel2.Location = new Point(185, 67);
+            scoreTextLabel2.Location = new Point(202, 67);
             scoreTextLabel2.Name = "scoreTextLabel2";
             scoreTextLabel2.Size = new Size(47, 21);
             scoreTextLabel2.TabIndex = 5;
@@ -158,7 +158,7 @@
             // 
             bestScoreLabel.AutoSize = true;
             bestScoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bestScoreLabel.Location = new Point(238, 67);
+            bestScoreLabel.Location = new Point(255, 67);
             bestScoreLabel.Name = "bestScoreLabel";
             bestScoreLabel.Size = new Size(19, 21);
             bestScoreLabel.TabIndex = 6;

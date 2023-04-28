@@ -17,12 +17,6 @@ namespace Game2048WindowsFormApp
 
             var sortUsersForBestScore = users.OrderByDescending(x => x.Score).ToList();
 
-            var maxValue = users.Max(x => x.Score);
-
-            var bestScore = users.Where(x => x.Score == maxValue);
-
-            StaticData.DataBufferUserScore = bestScore.ToString();
-
             foreach (User user in sortUsersForBestScore)
             {
                 resultGameDataGridView.Rows.Add(user.Name, user.Score);

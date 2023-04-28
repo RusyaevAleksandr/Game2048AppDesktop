@@ -35,7 +35,11 @@ namespace Game2048App
 
             userLabel.Text = $"Игрок: {user.Name}";
 
-            bestScoreLabel.Text = StaticData.DataBufferUserScore.ToString();
+            var users = UserRepository.GetUserResults();
+
+            var bestScoreGame = users.Max(u => u.Score);
+
+            bestScoreLabel.Text = bestScoreGame.ToString();
 
             InitMap();
 
