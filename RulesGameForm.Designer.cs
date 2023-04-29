@@ -34,12 +34,13 @@
             // 
             // rulesGameListView
             // 
+            rulesGameListView.BackColor = SystemColors.Info;
             rulesGameListView.Dock = DockStyle.Fill;
-            rulesGameListView.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rulesGameListView.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             rulesGameListView.Items.AddRange(new ListViewItem[] { listViewItem1 });
             rulesGameListView.Location = new Point(0, 0);
             rulesGameListView.Name = "rulesGameListView";
-            rulesGameListView.Size = new Size(1184, 361);
+            rulesGameListView.Size = new Size(1684, 461);
             rulesGameListView.TabIndex = 0;
             rulesGameListView.UseCompatibleStateImageBehavior = false;
             rulesGameListView.View = View.List;
@@ -48,9 +49,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 361);
+            BackColor = SystemColors.Info;
+            ClientSize = new Size(1684, 461);
             Controls.Add(rulesGameListView);
             Name = "RulesGameForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Правила игры";
             Load += RulesGameForm_Load;
             ResumeLayout(false);

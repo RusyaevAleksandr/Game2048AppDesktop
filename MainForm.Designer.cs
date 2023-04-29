@@ -45,7 +45,6 @@
             tableLayoutPanelTop = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
-            tableLayoutPanelMain = new TableLayoutPanel();
             menuStrip.SuspendLayout();
             tableLayoutPanelTop.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -56,20 +55,20 @@
             // 
             scoreTextLabel.AutoSize = true;
             scoreTextLabel.Dock = DockStyle.Left;
-            scoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            scoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             scoreTextLabel.Location = new Point(3, 0);
             scoreTextLabel.Name = "scoreTextLabel";
             scoreTextLabel.Padding = new Padding(4, 0, 0, 0);
-            scoreTextLabel.Size = new Size(51, 19);
+            scoreTextLabel.Size = new Size(54, 19);
             scoreTextLabel.TabIndex = 0;
             scoreTextLabel.Text = "Счет:";
             // 
             // scoreLabel
             // 
             scoreLabel.AutoSize = true;
-            scoreLabel.Dock = DockStyle.Right;
-            scoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            scoreLabel.Location = new Point(228, 0);
+            scoreLabel.Dock = DockStyle.Left;
+            scoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            scoreLabel.Location = new Point(89, 0);
             scoreLabel.Name = "scoreLabel";
             scoreLabel.Size = new Size(19, 19);
             scoreLabel.TabIndex = 1;
@@ -77,11 +76,12 @@
             // 
             // menuStrip
             // 
+            menuStrip.BackColor = Color.PaleGoldenrod;
             menuStrip.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, helpToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Padding = new Padding(5, 2, 0, 2);
-            menuStrip.Size = new Size(513, 24);
+            menuStrip.Size = new Size(358, 24);
             menuStrip.TabIndex = 2;
             menuStrip.Text = "menuStrip1";
             // 
@@ -138,11 +138,11 @@
             // 
             userLabel.AutoSize = true;
             userLabel.Dock = DockStyle.Left;
-            userLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             userLabel.Location = new Point(3, 0);
             userLabel.Name = "userLabel";
             userLabel.Padding = new Padding(4, 2, 0, 0);
-            userLabel.Size = new Size(61, 25);
+            userLabel.Size = new Size(68, 25);
             userLabel.TabIndex = 3;
             userLabel.Text = "Игрок:";
             // 
@@ -150,22 +150,22 @@
             // 
             bestScoreTextLabel.AutoSize = true;
             bestScoreTextLabel.Dock = DockStyle.Right;
-            bestScoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bestScoreTextLabel.Location = new Point(402, 0);
+            bestScoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bestScoreTextLabel.Location = new Point(238, 0);
             bestScoreTextLabel.Name = "bestScoreTextLabel";
             bestScoreTextLabel.Padding = new Padding(0, 2, 4, 0);
-            bestScoreTextLabel.Size = new Size(108, 25);
+            bestScoreTextLabel.Size = new Size(117, 25);
             bestScoreTextLabel.TabIndex = 4;
             bestScoreTextLabel.Text = "Лучший счет";
             // 
             // scoreTextLabel2
             // 
             scoreTextLabel2.AutoSize = true;
-            scoreTextLabel2.Dock = DockStyle.Left;
-            scoreTextLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            scoreTextLabel2.Location = new Point(3, 0);
+            scoreTextLabel2.Dock = DockStyle.Right;
+            scoreTextLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            scoreTextLabel2.Location = new Point(33, 0);
             scoreTextLabel2.Name = "scoreTextLabel2";
-            scoreTextLabel2.Size = new Size(47, 19);
+            scoreTextLabel2.Size = new Size(50, 19);
             scoreTextLabel2.TabIndex = 5;
             scoreTextLabel2.Text = "Счет:";
             // 
@@ -173,8 +173,8 @@
             // 
             bestScoreLabel.AutoSize = true;
             bestScoreLabel.Dock = DockStyle.Right;
-            bestScoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bestScoreLabel.Location = new Point(225, 0);
+            bestScoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bestScoreLabel.Location = new Point(147, 0);
             bestScoreLabel.Name = "bestScoreLabel";
             bestScoreLabel.Padding = new Padding(0, 0, 4, 0);
             bestScoreLabel.Size = new Size(23, 19);
@@ -197,7 +197,7 @@
             tableLayoutPanelTop.RowCount = 2;
             tableLayoutPanelTop.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanelTop.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanelTop.Size = new Size(513, 50);
+            tableLayoutPanelTop.Size = new Size(358, 50);
             tableLayoutPanelTop.TabIndex = 7;
             // 
             // tableLayoutPanel2
@@ -212,7 +212,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(250, 19);
+            tableLayoutPanel2.Size = new Size(173, 19);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // tableLayoutPanel3
@@ -223,34 +223,24 @@
             tableLayoutPanel3.Controls.Add(scoreTextLabel2, 0, 0);
             tableLayoutPanel3.Controls.Add(bestScoreLabel, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(259, 28);
+            tableLayoutPanel3.Location = new Point(182, 28);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new Size(251, 19);
+            tableLayoutPanel3.Size = new Size(173, 19);
             tableLayoutPanel3.TabIndex = 5;
-            // 
-            // tableLayoutPanelMain
-            // 
-            tableLayoutPanelMain.ColumnCount = 1;
-            tableLayoutPanelMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanelMain.Dock = DockStyle.Fill;
-            tableLayoutPanelMain.Location = new Point(0, 74);
-            tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            tableLayoutPanelMain.RowCount = 1;
-            tableLayoutPanelMain.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanelMain.Size = new Size(513, 366);
-            tableLayoutPanelMain.TabIndex = 8;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(513, 440);
-            Controls.Add(tableLayoutPanelMain);
+            BackColor = SystemColors.Info;
+            ClientSize = new Size(358, 450);
             Controls.Add(tableLayoutPanelTop);
             Controls.Add(menuStrip);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Игра 2048";
             FormClosed += MainForm_FormClosed;
             Load += MainForm_Load;
@@ -286,6 +276,5 @@
         private TableLayoutPanel tableLayoutPanelTop;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanelMain;
     }
 }

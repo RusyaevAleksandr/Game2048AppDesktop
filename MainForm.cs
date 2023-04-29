@@ -24,6 +24,10 @@ namespace Game2048App
 
         private User user = new User("User");
 
+        private FileProvider fileProvider = new FileProvider();
+
+        private int bestScoreGame = 0;
+
         public MainForm()
         {
             InitializeComponent();
@@ -37,9 +41,16 @@ namespace Game2048App
 
             var users = UserRepository.GetUserResults();
 
-            var bestScoreGame = users.Max(u => u.Score);
+            if (!FileProvider.Exists(fileProvider.NameFileResultGame))
+            {
+                bestScoreLabel.Text = bestScoreGame.ToString();
+            }
+            else
+            {
+                bestScoreGame = users.Max(u => u.Score);
 
-            bestScoreLabel.Text = bestScoreGame.ToString();
+                bestScoreLabel.Text = bestScoreGame.ToString();
+            }
 
             InitMap();
 

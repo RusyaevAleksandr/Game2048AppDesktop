@@ -20,7 +20,7 @@ namespace Game2048WindowsForApp
 
             this.Hide();
 
-            MainForm mainForm = new MainForm();            
+            MainForm mainForm = new MainForm();
 
             mainForm.Show();
         }
