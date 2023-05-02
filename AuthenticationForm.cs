@@ -10,6 +10,8 @@ namespace Game2048WindowsForApp
         public AuthenticationForm()
         {
             InitializeComponent();
+
+            nameTextBox.Select();
         }
 
         private void startButton_Click(object sender, EventArgs e)

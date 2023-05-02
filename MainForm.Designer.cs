@@ -157,12 +157,12 @@
             bestScoreTextLabel.AutoSize = true;
             bestScoreTextLabel.Dock = DockStyle.Right;
             bestScoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bestScoreTextLabel.Location = new Point(238, 0);
+            bestScoreTextLabel.Location = new Point(283, 0);
             bestScoreTextLabel.Name = "bestScoreTextLabel";
             bestScoreTextLabel.Padding = new Padding(0, 2, 4, 0);
-            bestScoreTextLabel.Size = new Size(117, 30);
+            bestScoreTextLabel.Size = new Size(72, 30);
             bestScoreTextLabel.TabIndex = 4;
-            bestScoreTextLabel.Text = "Лучший счет";
+            bestScoreTextLabel.Text = "Рекорд";
             // 
             // scoreTextLabel2
             // 
