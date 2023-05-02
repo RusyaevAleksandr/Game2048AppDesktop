@@ -8,15 +8,15 @@ namespace Game2048App
     {
         private Label[,] labelsMap;
 
-        private const int mapSize = 4;
+        private int mapSize = StaticData.DataMapSize;
 
         private const int cellSpacing = 6;
 
         private const int cellSize = 80;
 
-        private const int indentLeftAxisX = 10;
+        private const int indentLeftAxisX = 12;
 
-        private const int indentTopAxisY = 100;
+        private const int indentTopAxisY = 130;
 
         private static Random random = new Random();
 
@@ -52,9 +52,18 @@ namespace Game2048App
                 bestScoreLabel.Text = bestScoreGame.ToString();
             }
 
-            InitMap();
+            if (StaticData.DataMapSize == 0)
+            {
+                mapSize = 4;
+            }
+            else
+            {
+                mapSize = StaticData.DataMapSize;
+            }
 
-            GenerateNumber();
+            InitMap(mapSize);
+
+            GenerateNumber(mapSize);
 
             ShowScore();
         }
@@ -64,7 +73,7 @@ namespace Game2048App
             scoreLabel.Text = score.ToString();
         }
 
-        private void GenerateNumber()
+        private void GenerateNumber(int mapSize)
         {
             while (true)
             {
@@ -83,7 +92,7 @@ namespace Game2048App
             }
         }
 
-        private void InitMap()
+        private void InitMap(int mapSize)
         {
             labelsMap = new Label[mapSize, mapSize];
 
@@ -334,7 +343,7 @@ namespace Game2048App
             }
             #endregion
 
-            GenerateNumber();
+            GenerateNumber(mapSize);
 
             ShowScore();
         }

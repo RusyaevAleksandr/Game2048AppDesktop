@@ -7,11 +7,22 @@ namespace Game2048WindowsForApp
     {
         User user = new User("User");
 
+        private int mapSize;
+
+        public int MapSize
+        {
+            get { return mapSize; }
+
+            set { mapSize = value; }
+        }
+
         public AuthenticationForm()
         {
             InitializeComponent();
 
             nameTextBox.Select();
+
+            mapSizeComboBox.SelectedIndex = 0;
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -19,6 +30,21 @@ namespace Game2048WindowsForApp
             user.Name = nameTextBox.Text;
 
             StaticData.DataBufferUserName = user.Name;
+
+            var index = this.mapSizeComboBox.SelectedIndex;
+
+            if (index == 0)
+            {
+                StaticData.DataMapSize = 4;
+            }
+            else if (index == 1)
+            {
+                StaticData.DataMapSize = 5;
+            }
+            else if (index == 2)
+            {
+                StaticData.DataMapSize = 6;
+            }
 
             this.Hide();
 
