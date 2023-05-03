@@ -7,15 +7,6 @@ namespace Game2048WindowsForApp
     {
         User user = new User("User");
 
-        private int mapSize;
-
-        public int MapSize
-        {
-            get { return mapSize; }
-
-            set { mapSize = value; }
-        }
-
         public AuthenticationForm()
         {
             InitializeComponent();
@@ -44,6 +35,14 @@ namespace Game2048WindowsForApp
             else if (index == 2)
             {
                 StaticData.DataMapSize = 6;
+            }
+            else if (index == 3)
+            {
+                StaticData.DataMapSize = 7;
+            }
+            else if (index == 4)
+            {
+                StaticData.DataMapSize = 8;
             }
 
             this.Hide();

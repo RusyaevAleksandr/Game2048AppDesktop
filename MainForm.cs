@@ -8,13 +8,13 @@ namespace Game2048App
     {
         private Label[,] labelsMap;
 
-        private int mapSize = StaticData.DataMapSize;
+        private int mapSize;
 
         private const int cellSpacing = 6;
 
         private const int cellSize = 80;
 
-        private const int indentLeftAxisX = 12;
+        private const int indentLeftAxisX = 10;
 
         private const int indentTopAxisY = 130;
 
@@ -35,6 +35,8 @@ namespace Game2048App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            GetSizeMainForm();
+
             user.Name = StaticData.DataBufferUserName;
 
             userLabel.Text = $"Игрок: {user.Name}";
@@ -52,14 +54,7 @@ namespace Game2048App
                 bestScoreLabel.Text = bestScoreGame.ToString();
             }
 
-            if (StaticData.DataMapSize == 0)
-            {
-                mapSize = 4;
-            }
-            else
-            {
-                mapSize = StaticData.DataMapSize;
-            }
+            mapSize = GetDefaultMapSize();
 
             InitMap(mapSize);
 
@@ -71,6 +66,20 @@ namespace Game2048App
         private void ShowScore()
         {
             scoreLabel.Text = score.ToString();
+        }
+
+        private int GetDefaultMapSize()
+        {
+            if (StaticData.DataMapSize == 0)
+            {
+                mapSize = 4;
+            }
+            else
+            {
+                mapSize = StaticData.DataMapSize;
+            }
+
+            return mapSize;
         }
 
         private void GenerateNumber(int mapSize)
@@ -108,7 +117,16 @@ namespace Game2048App
                 }
             }
         }
+        private void GetSizeMainForm()
+        {
+            mapSize = GetDefaultMapSize();
 
+            this.Width = (indentLeftAxisX * 2) + (mapSize * cellSize) + ((mapSize - 1) * cellSpacing);
+
+            this.Height = indentTopAxisY + (mapSize * cellSize) + ((mapSize - 1) * cellSpacing) + indentLeftAxisX;
+
+            this.ClientSize = new Size(this.Width, this.Height);
+        }
         private Label newCreateLabel(int indexRow, int indexColumn)
         {
             var label = new Label();
@@ -125,6 +143,8 @@ namespace Game2048App
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
+            mapSize = GetDefaultMapSize();
+
             #region Key Right
             if (e.KeyCode == Keys.Right)
             {

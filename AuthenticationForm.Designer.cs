@@ -36,10 +36,12 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             mapSizeTextLabel = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
             mapSizeComboBox = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // welcomeLabel
@@ -59,8 +61,9 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            nameLabel.ForeColor = Color.Chocolate;
-            nameLabel.Location = new Point(3, 57);
+            nameLabel.ForeColor = Color.Sienna;
+            nameLabel.Location = new Point(8, 57);
+            nameLabel.Margin = new Padding(8, 0, 3, 0);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(113, 21);
             nameLabel.TabIndex = 1;
@@ -68,6 +71,7 @@
             // 
             // nameTextBox
             // 
+            nameTextBox.BackColor = SystemColors.Window;
             nameTextBox.Location = new Point(129, 60);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(243, 23);
@@ -77,7 +81,7 @@
             // 
             startButton.BackColor = Color.Khaki;
             startButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            startButton.ForeColor = Color.Chocolate;
+            startButton.ForeColor = Color.Sienna;
             startButton.Location = new Point(164, 3);
             startButton.Name = "startButton";
             startButton.Size = new Size(154, 38);
@@ -125,8 +129,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46.2231522F));
             tableLayoutPanel2.Controls.Add(nameTextBox, 1, 1);
             tableLayoutPanel2.Controls.Add(mapSizeTextLabel, 0, 2);
-            tableLayoutPanel2.Controls.Add(mapSizeComboBox, 1, 2);
             tableLayoutPanel2.Controls.Add(nameLabel, 0, 1);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 1, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 40);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -141,22 +145,40 @@
             // 
             mapSizeTextLabel.AutoSize = true;
             mapSizeTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            mapSizeTextLabel.ForeColor = Color.Chocolate;
-            mapSizeTextLabel.Location = new Point(3, 114);
+            mapSizeTextLabel.ForeColor = Color.Sienna;
+            mapSizeTextLabel.Location = new Point(8, 114);
+            mapSizeTextLabel.Margin = new Padding(8, 0, 3, 0);
             mapSizeTextLabel.Name = "mapSizeTextLabel";
             mapSizeTextLabel.Size = new Size(115, 21);
             mapSizeTextLabel.TabIndex = 3;
             mapSizeTextLabel.Text = "Размер поля:";
             // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 3;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.99999F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.00001F));
+            tableLayoutPanel4.Controls.Add(mapSizeComboBox, 1, 0);
+            tableLayoutPanel4.Dock = DockStyle.Fill;
+            tableLayoutPanel4.Location = new Point(126, 114);
+            tableLayoutPanel4.Margin = new Padding(0);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 1;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(249, 57);
+            tableLayoutPanel4.TabIndex = 4;
+            // 
             // mapSizeComboBox
             // 
+            mapSizeComboBox.BackColor = SystemColors.Info;
             mapSizeComboBox.Dock = DockStyle.Fill;
             mapSizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            mapSizeComboBox.ForeColor = Color.Chocolate;
-            mapSizeComboBox.Items.AddRange(new object[] { "4 х 4", "5 х 5", "6 х 6" });
-            mapSizeComboBox.Location = new Point(129, 117);
+            mapSizeComboBox.ForeColor = Color.Sienna;
+            mapSizeComboBox.Items.AddRange(new object[] { "4 х 4", "5 х 5", "6 х 6", "7 х 7", "8 х 8" });
+            mapSizeComboBox.Location = new Point(71, 3);
             mapSizeComboBox.Name = "mapSizeComboBox";
-            mapSizeComboBox.Size = new Size(243, 23);
+            mapSizeComboBox.Size = new Size(105, 23);
             mapSizeComboBox.TabIndex = 4;
             // 
             // AuthenticationForm
@@ -168,6 +190,7 @@
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximumSize = new Size(500, 350);
             MinimumSize = new Size(500, 350);
             Name = "AuthenticationForm";
@@ -178,6 +201,7 @@
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -192,5 +216,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label mapSizeTextLabel;
         private ComboBox mapSizeComboBox;
+        private TableLayoutPanel tableLayoutPanel4;
     }
 }

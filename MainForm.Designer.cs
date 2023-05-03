@@ -53,8 +53,9 @@
             scoreLabel.AutoSize = true;
             scoreLabel.Dock = DockStyle.Left;
             scoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            scoreLabel.ForeColor = Color.Chocolate;
-            scoreLabel.Location = new Point(3, 30);
+            scoreLabel.ForeColor = Color.Sienna;
+            scoreLabel.Location = new Point(6, 30);
+            scoreLabel.Margin = new Padding(6, 0, 3, 0);
             scoreLabel.Name = "scoreLabel";
             scoreLabel.Size = new Size(19, 30);
             scoreLabel.TabIndex = 1;
@@ -75,58 +76,58 @@
             // menuToolStripMenuItem
             // 
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { restartGameToolStripMenuItem, saveResultToolStripMenuItem, resultListToolStripMenuItem, exitToolStripMenuItem });
-            menuToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            menuToolStripMenuItem.ForeColor = Color.Chocolate;
+            menuToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            menuToolStripMenuItem.ForeColor = Color.Sienna;
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(66, 25);
+            menuToolStripMenuItem.Size = new Size(70, 25);
             menuToolStripMenuItem.Text = "Меню";
             // 
             // restartGameToolStripMenuItem
             // 
-            restartGameToolStripMenuItem.ForeColor = Color.Chocolate;
+            restartGameToolStripMenuItem.ForeColor = Color.Sienna;
             restartGameToolStripMenuItem.Name = "restartGameToolStripMenuItem";
-            restartGameToolStripMenuItem.Size = new Size(230, 26);
+            restartGameToolStripMenuItem.Size = new Size(244, 26);
             restartGameToolStripMenuItem.Text = "Начать сначала";
             restartGameToolStripMenuItem.Click += restartGameToolStripMenuItem_Click;
             // 
             // saveResultToolStripMenuItem
             // 
-            saveResultToolStripMenuItem.ForeColor = Color.Chocolate;
+            saveResultToolStripMenuItem.ForeColor = Color.Sienna;
             saveResultToolStripMenuItem.Name = "saveResultToolStripMenuItem";
-            saveResultToolStripMenuItem.Size = new Size(230, 26);
+            saveResultToolStripMenuItem.Size = new Size(244, 26);
             saveResultToolStripMenuItem.Text = "Сохранить результат";
             saveResultToolStripMenuItem.Click += saveResultToolStripMenuItem_Click;
             // 
             // resultListToolStripMenuItem
             // 
-            resultListToolStripMenuItem.ForeColor = Color.Chocolate;
+            resultListToolStripMenuItem.ForeColor = Color.Sienna;
             resultListToolStripMenuItem.Name = "resultListToolStripMenuItem";
-            resultListToolStripMenuItem.Size = new Size(230, 26);
+            resultListToolStripMenuItem.Size = new Size(244, 26);
             resultListToolStripMenuItem.Text = "Список результатов";
             resultListToolStripMenuItem.Click += resultListToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
-            exitToolStripMenuItem.ForeColor = Color.Chocolate;
+            exitToolStripMenuItem.ForeColor = Color.Sienna;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(230, 26);
+            exitToolStripMenuItem.Size = new Size(244, 26);
             exitToolStripMenuItem.Text = "Выход";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rulesGameToolStripMenuItem });
-            helpToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            helpToolStripMenuItem.ForeColor = Color.Chocolate;
+            helpToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            helpToolStripMenuItem.ForeColor = Color.Sienna;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(83, 25);
+            helpToolStripMenuItem.Size = new Size(89, 25);
             helpToolStripMenuItem.Text = "Помощь";
             // 
             // rulesGameToolStripMenuItem
             // 
-            rulesGameToolStripMenuItem.ForeColor = Color.Chocolate;
+            rulesGameToolStripMenuItem.ForeColor = Color.Sienna;
             rulesGameToolStripMenuItem.Name = "rulesGameToolStripMenuItem";
-            rulesGameToolStripMenuItem.Size = new Size(180, 26);
+            rulesGameToolStripMenuItem.Size = new Size(193, 26);
             rulesGameToolStripMenuItem.Text = "Правила игры";
             rulesGameToolStripMenuItem.Click += rulesGameToolStripMenuItem_Click;
             // 
@@ -135,7 +136,7 @@
             userLabel.AutoSize = true;
             userLabel.Dock = DockStyle.Left;
             userLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            userLabel.ForeColor = Color.Chocolate;
+            userLabel.ForeColor = Color.Sienna;
             userLabel.Location = new Point(3, 0);
             userLabel.Name = "userLabel";
             userLabel.Padding = new Padding(4, 2, 0, 0);
@@ -148,7 +149,7 @@
             bestScoreTextLabel.AutoSize = true;
             bestScoreTextLabel.Dock = DockStyle.Right;
             bestScoreTextLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bestScoreTextLabel.ForeColor = Color.Chocolate;
+            bestScoreTextLabel.ForeColor = Color.Sienna;
             bestScoreTextLabel.Location = new Point(289, 0);
             bestScoreTextLabel.Name = "bestScoreTextLabel";
             bestScoreTextLabel.Padding = new Padding(0, 2, 4, 0);
@@ -161,7 +162,7 @@
             bestScoreLabel.AutoSize = true;
             bestScoreLabel.Dock = DockStyle.Right;
             bestScoreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bestScoreLabel.ForeColor = Color.Chocolate;
+            bestScoreLabel.ForeColor = Color.Sienna;
             bestScoreLabel.Location = new Point(338, 30);
             bestScoreLabel.Name = "bestScoreLabel";
             bestScoreLabel.Padding = new Padding(0, 0, 4, 0);
@@ -225,7 +226,7 @@
             Controls.Add(tableLayoutPanelTop);
             Controls.Add(menuStrip);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            MinimumSize = new Size(380, 520);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Игра 2048";

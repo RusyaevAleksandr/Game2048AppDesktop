@@ -40,7 +40,7 @@
             rulesGameListView.Items.AddRange(new ListViewItem[] { listViewItem1 });
             rulesGameListView.Location = new Point(0, 0);
             rulesGameListView.Name = "rulesGameListView";
-            rulesGameListView.Size = new Size(1684, 461);
+            rulesGameListView.Size = new Size(1604, 461);
             rulesGameListView.TabIndex = 0;
             rulesGameListView.UseCompatibleStateImageBehavior = false;
             rulesGameListView.View = View.List;
@@ -49,9 +49,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(1684, 461);
+            ClientSize = new Size(1604, 461);
             Controls.Add(rulesGameListView);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "RulesGameForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Правила игры";
