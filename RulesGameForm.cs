@@ -69,5 +69,10 @@ namespace Game2048WindowsForApp
                 rulesGameListView.Items.Add(listView);
             }
         }
+
+        private void rulesGameListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

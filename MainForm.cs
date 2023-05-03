@@ -28,6 +28,8 @@ namespace Game2048App
 
         private int bestScoreGame = 0;
 
+        private bool valueChanged = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -133,12 +135,35 @@ namespace Game2048App
             int x = indentLeftAxisX + indexColumn * (cellSize + cellSpacing);
             int y = indentTopAxisY + indexRow * (cellSize + cellSpacing);
             label.Location = new Point(x, y);
-            label.BackColor = SystemColors.ControlDark;
+            //label.BackColor = SystemColors.ControlDark;
+            label.BackColor = GetColorField(valueChanged);
             label.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label.Size = new Size(cellSize, cellSize);
             label.TabIndex = 0;
             label.TextAlign = ContentAlignment.MiddleCenter;
             return label;
+        }
+
+        private Color GetColorField(bool valueChanged)
+        {
+            var color = new Color();
+
+            int numberRed = 255;
+
+            int numberGreen = 248;
+
+            int numberBlue = 220;
+
+            if (valueChanged)
+            {
+                numberRed -= 2;
+                numberGreen -= 2;
+                numberBlue -= 2;
+            }
+
+            color = Color.FromArgb(numberRed, numberGreen, numberBlue);
+
+            return color;
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -165,6 +190,8 @@ namespace Game2048App
                                         score += number * 2;
 
                                         labelsMap[i, j].Text = (number * 2).ToString();
+
+                                        valueChanged = true;
 
                                         labelsMap[i, k].Text = string.Empty;
                                     }
@@ -220,6 +247,8 @@ namespace Game2048App
 
                                         labelsMap[i, j].Text = (number * 2).ToString();
 
+                                        valueChanged = true;
+
                                         labelsMap[i, k].Text = string.Empty;
                                     }
 
@@ -273,6 +302,8 @@ namespace Game2048App
                                         score += number * 2;
 
                                         labelsMap[i, j].Text = (number * 2).ToString();
+
+                                        valueChanged = true;
 
                                         labelsMap[k, j].Text = string.Empty;
                                     }
@@ -328,6 +359,8 @@ namespace Game2048App
                                         score += number * 2;
 
                                         labelsMap[i, j].Text = (number * 2).ToString();
+
+                                        valueChanged = true;
 
                                         labelsMap[k, j].Text = string.Empty;
                                     }
