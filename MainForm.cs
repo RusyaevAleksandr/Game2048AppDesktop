@@ -366,7 +366,7 @@ namespace Game2048App
 
                                         score += number * 2;
 
-                                        labelsMap[i, j].Text = (number * 2).ToString()
+                                        labelsMap[i, j].Text = (number * 2).ToString();
 
                                         labelsMap[k, j].Text = string.Empty;
                                     }
