@@ -36,14 +36,6 @@ namespace Game2048WindowsForApp
             {
                 StaticData.DataMapSize = 6;
             }
-            else if (index == 3)
-            {
-                StaticData.DataMapSize = 7;
-            }
-            else if (index == 4)
-            {
-                StaticData.DataMapSize = 8;
-            }
 
             this.Hide();
 
