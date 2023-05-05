@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game2048WindowsFormApp", "Game2048WindowsFormApp.csproj", "{C0CB5C61-75A9-4843-8CB5-F60DDD391879}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{65D99AC4-2546-402F-9C53-EC1096DD5462}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{65D99AC4-2546-402F-9C53-EC1096DD5462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

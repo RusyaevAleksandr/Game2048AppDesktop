@@ -68,9 +68,5 @@ namespace Game2048App.Common
         {
             return File.Exists(nameFile);
         }
-        internal static void Clear(string nameFile)
-        {
-            File.WriteAllText(nameFile, string.Empty);
-        }
     }
 }
