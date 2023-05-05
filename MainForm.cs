@@ -35,7 +35,7 @@ namespace Game2048App
         {
             GetSizeMainForm();
 
-            user.Name = StaticData.DataBufferUserName;
+            user.Name = GetUserName();
 
             userLabel.Text = $"Игрок: {user.Name}";            
 
@@ -189,9 +189,17 @@ namespace Game2048App
                 case "512": label.BackColor = Color.FromArgb(139, 69, 19); break;
                 case "1024": label.BackColor = Color.FromArgb(165, 42, 42); break;
                 case "2048": label.BackColor = Color.FromArgb(128, 0, 0); break;
+            }            
+        }
+
+        private string GetUserName()
+        {
+            if (StaticData.DataBufferUserName == String.Empty)
+            {
+                return $"User_{score}";
             }
 
-            
+            return StaticData.DataBufferUserName;
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -202,6 +210,8 @@ namespace Game2048App
             {
                 user.Score = score;
 
+                user.Name = GetUserName();
+
                 UserRepository.AppendUserResult(user);
 
                 MessageBox.Show("Вы Выиграли!!!");
@@ -211,6 +221,8 @@ namespace Game2048App
             if (EndGame())
             {
                 user.Score = score;
+
+                user.Name = GetUserName();
 
                 UserRepository.AppendUserResult(user);
 
@@ -536,6 +548,8 @@ namespace Game2048App
         private void saveResultToolStripMenuItem_Click(object sender, EventArgs e)
         {
             user.Score = score;
+
+            user.Name = GetUserName();
 
             UserRepository.AppendUserResult(user);
         }
