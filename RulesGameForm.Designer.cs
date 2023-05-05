@@ -44,6 +44,7 @@
             rulesGameListView.TabIndex = 0;
             rulesGameListView.UseCompatibleStateImageBehavior = false;
             rulesGameListView.View = View.List;
+            rulesGameListView.SelectedIndexChanged += rulesGameListView_SelectedIndexChanged;
             // 
             // RulesGameForm
             // 

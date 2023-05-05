@@ -175,7 +175,7 @@
             mapSizeComboBox.Dock = DockStyle.Fill;
             mapSizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             mapSizeComboBox.ForeColor = Color.Sienna;
-            mapSizeComboBox.Items.AddRange(new object[] { "4 х 4", "5 х 5", "6 х 6", "7 х 7", "8 х 8" });
+            mapSizeComboBox.Items.AddRange(new object[] { "4 х 4", "5 х 5", "6 х 6" });
             mapSizeComboBox.Location = new Point(71, 3);
             mapSizeComboBox.Name = "mapSizeComboBox";
             mapSizeComboBox.Size = new Size(105, 23);
