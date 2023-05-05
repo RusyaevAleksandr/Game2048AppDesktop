@@ -19,7 +19,7 @@ namespace Game2048WindowsFormApp
 
             foreach (User user in sortUsersForBestScore)
             {
-                resultGameDataGridView.Rows.Add(user.Name, user.Score);
+                resultGameDataGridView.Rows.Add(user.Name, user.Score, user.MapSize);
             }
         }
     }

@@ -212,6 +212,8 @@ namespace Game2048App
 
                 user.Name = GetUserName();
 
+                user.MapSize = mapSize;
+
                 UserRepository.AppendUserResult(user);
 
                 MessageBox.Show("Вы Выиграли!!!");
@@ -223,6 +225,8 @@ namespace Game2048App
                 user.Score = score;
 
                 user.Name = GetUserName();
+
+                user.MapSize = mapSize;
 
                 UserRepository.AppendUserResult(user);
 
@@ -550,6 +554,8 @@ namespace Game2048App
             user.Score = score;
 
             user.Name = GetUserName();
+
+            user.MapSize = mapSize;
 
             UserRepository.AppendUserResult(user);
         }

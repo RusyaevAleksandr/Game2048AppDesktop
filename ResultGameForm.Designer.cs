@@ -30,9 +30,11 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             resultGameDataGridView = new DataGridView();
             userName = new DataGridViewTextBoxColumn();
             scoreGame = new DataGridViewTextBoxColumn();
+            mapSizeColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)resultGameDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -40,7 +42,7 @@
             // 
             resultGameDataGridView.BackgroundColor = SystemColors.Info;
             resultGameDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resultGameDataGridView.Columns.AddRange(new DataGridViewColumn[] { userName, scoreGame });
+            resultGameDataGridView.Columns.AddRange(new DataGridViewColumn[] { userName, scoreGame, mapSizeColumn });
             resultGameDataGridView.Dock = DockStyle.Fill;
             resultGameDataGridView.Location = new Point(0, 0);
             resultGameDataGridView.Name = "resultGameDataGridView";
@@ -67,6 +69,15 @@
             scoreGame.HeaderText = "Лучший результат";
             scoreGame.Name = "scoreGame";
             // 
+            // mapSizeColumn
+            // 
+            mapSizeColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            mapSizeColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            mapSizeColumn.HeaderText = "Размер поля";
+            mapSizeColumn.Name = "mapSizeColumn";
+            // 
             // ResultGameForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -88,5 +99,6 @@
         private DataGridView resultGameDataGridView;
         private DataGridViewTextBoxColumn userName;
         private DataGridViewTextBoxColumn scoreGame;
+        private DataGridViewTextBoxColumn mapSizeColumn;
     }
 }

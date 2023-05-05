@@ -27,19 +27,6 @@ namespace Game2048App.Common
             set { nameFileRulesGame = value; }
         }
 
-        public static void AppendToFile(string path, string nameFile, string value)
-        {
-            DirectoryInfo directoryInfo = new DirectoryInfo(path);
-
-            if (!directoryInfo.Exists)
-            {
-                directoryInfo.Create();
-            }
-            using(StreamWriter sw = new StreamWriter(nameFile, true, Encoding.Default))
-            {
-                sw.WriteLine(value);
-            }
-        }
         public static void Replace(string paht, string nameFile, string value)
         {
             DirectoryInfo directory = new DirectoryInfo(paht);
