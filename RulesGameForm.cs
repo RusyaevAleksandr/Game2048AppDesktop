@@ -62,17 +62,8 @@ namespace Game2048WindowsForApp
 
             for (int i = 0; i < rulesGame.Count; i++)
             {
-                ListViewItem listView = new ListViewItem();
-
-                listView.Text = rulesGame[i];
-
-                rulesGameListView.Items.Add(listView);
+                rulesGameListBox.Items.Add(rulesGame[i]);
             }
-        }
-
-        private void rulesGameListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

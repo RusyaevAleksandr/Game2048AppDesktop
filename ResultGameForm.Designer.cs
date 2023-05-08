@@ -86,6 +86,7 @@
             Controls.Add(resultGameDataGridView);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
+            MinimumSize = new Size(700, 500);
             Name = "ResultGameForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Список результатов игры";
