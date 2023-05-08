@@ -63,7 +63,7 @@ namespace Game2048App
                 return;
             }
 
-            bestScoreGame = users.Max(u => u.Score);
+            bestScoreGame = users.Where(u => u.MapSize == GetDefaultMapSize()).Max(u => u.Score);
 
             ShowBestScore();
         }
