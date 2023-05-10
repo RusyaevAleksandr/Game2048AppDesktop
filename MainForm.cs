@@ -212,35 +212,6 @@ namespace Game2048App
         {
             mapSize = GetDefaultMapSize();
 
-            if (Win())
-            {
-                user.Score = score;
-
-                user.Name = GetUserName();
-
-                user.MapSize = mapSize;
-
-                UserRepository.AppendUserResult(user);
-
-                MessageBox.Show("Вы Выиграли!!!");
-
-                return;
-            }
-            if (EndGame())
-            {
-                user.Score = score;
-
-                user.Name = GetUserName();
-
-                user.MapSize = mapSize;
-
-                UserRepository.AppendUserResult(user);
-
-                MessageBox.Show("Игра закончилась! Вы проиграли!!!");
-
-                return;
-            }
-
             if (e.KeyCode != Keys.Right && e.KeyCode != Keys.Left && e.KeyCode != Keys.Up && e.KeyCode != Keys.Down)
             {
                 return;
@@ -279,6 +250,36 @@ namespace Game2048App
             ShowScore();
 
             ShowBestScore();
+
+
+            if (Win())
+            {
+                user.Score = score;
+
+                user.Name = GetUserName();
+
+                user.MapSize = mapSize;
+
+                UserRepository.AppendUserResult(user);
+
+                MessageBox.Show("Вы Выиграли!!!");
+
+                return;
+            }
+            if (EndGame())
+            {
+                user.Score = score;
+
+                user.Name = GetUserName();
+
+                user.MapSize = mapSize;
+
+                UserRepository.AppendUserResult(user);
+
+                MessageBox.Show("Игра закончилась! Вы проиграли!!!");
+
+                return;
+            }
         }
 
         private bool EndGame()

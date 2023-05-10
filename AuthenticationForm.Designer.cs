@@ -192,6 +192,7 @@
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             MaximumSize = new Size(500, 350);
             MinimumSize = new Size(500, 350);
             Name = "AuthenticationForm";
