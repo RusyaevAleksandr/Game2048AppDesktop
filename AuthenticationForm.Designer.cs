@@ -156,9 +156,9 @@
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.99999F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.00001F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33334F));
             tableLayoutPanel4.Controls.Add(mapSizeComboBox, 1, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(126, 114);
@@ -174,11 +174,12 @@
             mapSizeComboBox.BackColor = SystemColors.Info;
             mapSizeComboBox.Dock = DockStyle.Fill;
             mapSizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            mapSizeComboBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             mapSizeComboBox.ForeColor = Color.Sienna;
             mapSizeComboBox.Items.AddRange(new object[] { "4 х 4", "5 х 5", "6 х 6" });
-            mapSizeComboBox.Location = new Point(71, 3);
+            mapSizeComboBox.Location = new Point(85, 3);
             mapSizeComboBox.Name = "mapSizeComboBox";
-            mapSizeComboBox.Size = new Size(105, 23);
+            mapSizeComboBox.Size = new Size(77, 25);
             mapSizeComboBox.TabIndex = 4;
             // 
             // AuthenticationForm
@@ -191,6 +192,7 @@
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             MaximumSize = new Size(500, 350);
             MinimumSize = new Size(500, 350);
             Name = "AuthenticationForm";

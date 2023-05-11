@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem("Основные положения:");
-            rulesGameListView = new ListView();
+            rulesGameListBox = new ListBox();
             SuspendLayout();
             // 
-            // rulesGameListView
+            // rulesGameListBox
             // 
-            rulesGameListView.BackColor = SystemColors.Info;
-            rulesGameListView.Dock = DockStyle.Fill;
-            rulesGameListView.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rulesGameListView.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            rulesGameListView.Location = new Point(0, 0);
-            rulesGameListView.Name = "rulesGameListView";
-            rulesGameListView.Size = new Size(1604, 461);
-            rulesGameListView.TabIndex = 0;
-            rulesGameListView.UseCompatibleStateImageBehavior = false;
-            rulesGameListView.View = View.List;
-            rulesGameListView.SelectedIndexChanged += rulesGameListView_SelectedIndexChanged;
+            rulesGameListBox.BackColor = SystemColors.Info;
+            rulesGameListBox.Dock = DockStyle.Fill;
+            rulesGameListBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rulesGameListBox.FormattingEnabled = true;
+            rulesGameListBox.HorizontalScrollbar = true;
+            rulesGameListBox.ItemHeight = 21;
+            rulesGameListBox.Location = new Point(0, 0);
+            rulesGameListBox.Name = "rulesGameListBox";
+            rulesGameListBox.ScrollAlwaysVisible = true;
+            rulesGameListBox.Size = new Size(684, 461);
+            rulesGameListBox.TabIndex = 1;
             // 
             // RulesGameForm
             // 
@@ -52,9 +51,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(1604, 461);
-            Controls.Add(rulesGameListView);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            ClientSize = new Size(684, 461);
+            Controls.Add(rulesGameListBox);
+            MinimumSize = new Size(700, 500);
             Name = "RulesGameForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Правила игры";
@@ -63,7 +62,6 @@
         }
 
         #endregion
-
-        private ListView rulesGameListView;
+        private ListBox rulesGameListBox;
     }
 }

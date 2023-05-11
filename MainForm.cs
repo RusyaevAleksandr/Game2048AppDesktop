@@ -20,7 +20,7 @@ namespace Game2048App
 
         private Label[,] labelsMap;
 
-        private int mapSize;        
+        private int mapSize;
 
         private int score = 0;
 
@@ -37,7 +37,7 @@ namespace Game2048App
 
             user.Name = GetUserName();
 
-            userLabel.Text = $"Игрок: {user.Name}";            
+            userLabel.Text = $"Игрок: {user.Name}";
 
             CalculateBestScore();
 
@@ -62,15 +62,21 @@ namespace Game2048App
             {
                 return;
             }
-
-            bestScoreGame = users.Max(u => u.Score);
+            try
+            {
+                bestScoreGame = users.Where(u => u.MapSize == GetDefaultMapSize()).Max(u => u.Score);
+            }
+            catch
+            {
+                bestScoreGame = 0;
+            }
 
             ShowBestScore();
         }
 
         private void ShowBestScore()
         {
-            if(score > bestScoreGame)
+            if (score > bestScoreGame)
             {
                 bestScoreGame = score;
             }
@@ -99,7 +105,7 @@ namespace Game2048App
 
         private void GenerateNumber(int mapSize)
         {
-            var random = new Random();  
+            var random = new Random();
 
             while (true)
             {
@@ -113,7 +119,7 @@ namespace Game2048App
                 {
                     var randomNumber = random.Next(1, 101);
 
-                    if(randomNumber <= 75)
+                    if (randomNumber <= 75)
                     {
                         labelsMap[indexRow, indexColumn].Text = "2";
                     }
@@ -143,6 +149,7 @@ namespace Game2048App
                 }
             }
         }
+
         private void GetSizeMainForm()
         {
             mapSize = GetDefaultMapSize();
@@ -153,6 +160,7 @@ namespace Game2048App
 
             this.ClientSize = new Size(this.Width, this.Height);
         }
+
         private Label NewCreateLabel(int indexRow, int indexColumn)
         {
             var label = new Label();
@@ -189,7 +197,7 @@ namespace Game2048App
                 case "512": label.BackColor = Color.FromArgb(139, 69, 19); break;
                 case "1024": label.BackColor = Color.FromArgb(165, 42, 42); break;
                 case "2048": label.BackColor = Color.FromArgb(128, 0, 0); break;
-            }            
+            }
         }
 
         private string GetUserName()
@@ -205,6 +213,37 @@ namespace Game2048App
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
             mapSize = GetDefaultMapSize();
+
+            if (e.KeyCode != Keys.Right && e.KeyCode != Keys.Left && e.KeyCode != Keys.Up && e.KeyCode != Keys.Down)
+            {
+                return;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                MoveRight();
+            }
+
+            if (e.KeyCode == Keys.Left)
+            {
+                MoveLeft();
+            }
+
+            if (e.KeyCode == Keys.Up)
+            {
+                MoveUp();
+            }
+
+            if (e.KeyCode == Keys.Down)
+            {
+                MoveDown();
+            }
+
+            GenerateNumber(mapSize);
+
+            ShowScore();
+
+            ShowBestScore();
+
 
             if (Win())
             {
@@ -234,45 +273,6 @@ namespace Game2048App
 
                 return;
             }
-
-            if (e.KeyCode != Keys.Right && e.KeyCode != Keys.Left && e.KeyCode != Keys.Up && e.KeyCode != Keys.Down)
-            {
-                return;
-            }
-
-            #region Key Right
-            if (e.KeyCode == Keys.Right)
-            {
-                MoveRight();
-            }
-            #endregion
-
-            #region Key Left
-            if (e.KeyCode == Keys.Left)
-            {
-                MoveLeft();
-            }
-            #endregion
-
-            #region Key Up
-            if (e.KeyCode == Keys.Up)
-            {
-                MoveUp();
-            }
-            #endregion
-
-            #region Key Down
-            if (e.KeyCode == Keys.Down)
-            {
-                MoveDown();
-            }
-            #endregion
-
-            GenerateNumber(mapSize);
-
-            ShowScore();
-
-            ShowBestScore();
         }
 
         private bool EndGame()
@@ -565,6 +565,6 @@ namespace Game2048App
             ResultGameForm resultGameForm = new ResultGameForm();
 
             resultGameForm.ShowDialog();
-        }
+        }        
     }
 }
