@@ -217,33 +217,25 @@ namespace Game2048App
                 return;
             }
 
-            #region Key Right
             if (e.KeyCode == Keys.Right)
             {
                 MoveRight();
             }
-            #endregion
 
-            #region Key Left
             if (e.KeyCode == Keys.Left)
             {
                 MoveLeft();
             }
-            #endregion
 
-            #region Key Up
             if (e.KeyCode == Keys.Up)
             {
                 MoveUp();
             }
-            #endregion
 
-            #region Key Down
             if (e.KeyCode == Keys.Down)
             {
                 MoveDown();
             }
-            #endregion
 
             GenerateNumber(mapSize);
 
