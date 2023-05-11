@@ -149,6 +149,7 @@ namespace Game2048App
                 }
             }
         }
+
         private void GetSizeMainForm()
         {
             mapSize = GetDefaultMapSize();
@@ -159,6 +160,7 @@ namespace Game2048App
 
             this.ClientSize = new Size(this.Width, this.Height);
         }
+
         private Label NewCreateLabel(int indexRow, int indexColumn)
         {
             var label = new Label();
@@ -216,7 +218,6 @@ namespace Game2048App
             {
                 return;
             }
-
             if (e.KeyCode == Keys.Right)
             {
                 MoveRight();
@@ -564,6 +565,6 @@ namespace Game2048App
             ResultGameForm resultGameForm = new ResultGameForm();
 
             resultGameForm.ShowDialog();
-        }
+        }        
     }
 }
