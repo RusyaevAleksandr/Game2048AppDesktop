@@ -275,6 +275,7 @@ namespace Game2048App
 
                 return;
             }
+
             if (EndGame())
             {
                 user.Score = score;
@@ -441,17 +442,10 @@ namespace Game2048App
 
         private bool EndGame()
         {
-            for (int i = 0; i < mapSize; i++)
+            if (CheckForEmptyLabel())
             {
-                for (int j = 0; j < mapSize; j++)
-                {
-                    if (labelsMap[i, j].Text == "")
-                    {
-                        return false;
-                    }
-                }
+                return false;
             }
-
             for (int i = 0; i < mapSize - 1; i++)
             {
                 for (int j = 0; j < mapSize - 1; j++)
