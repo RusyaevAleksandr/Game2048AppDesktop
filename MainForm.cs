@@ -220,21 +220,37 @@ namespace Game2048App
             }
             if (e.KeyCode == Keys.Right)
             {
+                if (MoveRightBan())
+                {
+                    return;
+                }
                 MoveRight();
             }
 
             if (e.KeyCode == Keys.Left)
             {
+                if (MoveLeftBan())
+                {
+                    return;
+                }
                 MoveLeft();
             }
 
             if (e.KeyCode == Keys.Up)
             {
+                if (MoveUpBan())
+                {
+                    return;
+                }
                 MoveUp();
             }
 
             if (e.KeyCode == Keys.Down)
             {
+                if (MoveDownBan())
+                {
+                    return;
+                }
                 MoveDown();
             }
 
@@ -259,6 +275,7 @@ namespace Game2048App
 
                 return;
             }
+
             if (EndGame())
             {
                 user.Score = score;
@@ -275,28 +292,171 @@ namespace Game2048App
             }
         }
 
-        private bool EndGame()
+        private bool CheckForEmptyLabel()
         {
             for (int i = 0; i < mapSize; i++)
             {
                 for (int j = 0; j < mapSize; j++)
                 {
-                    if (labelsMap[i, j].Text == "")
+                    if (labelsMap[i, j].Text == string.Empty)
                     {
-                        return false;
+                        return true;
                     }
                 }
             }
 
-            for (int i = 0; i < mapSize - 1; i++)
+            return false;
+        }
+
+        private bool MoveLeftBan()
+        {
+            if (CheckForEmptyLabel())
             {
-                for (int j = 0; j < mapSize - 1; j++)
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < mapSize; i++)
                 {
-                    if (labelsMap[i, j].Text == labelsMap[i, j + 1].Text || labelsMap[i, j].Text == labelsMap[i + 1, j].Text)
+                    for (int j = 0; j < mapSize; j++)
                     {
-                        return false;
+                        if (labelsMap[i, j].Text != string.Empty)
+                        {
+                            for (int k = j + 1; k < mapSize; k++)
+                            {
+                                if (labelsMap[i, k].Text != string.Empty)
+                                {
+                                    if (labelsMap[i, j].Text == labelsMap[i, k].Text)
+                                    {
+                                        return false;
+                                    }
+
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
+                return true;
+            }            
+        }
+
+        private bool MoveRightBan()
+        {
+            if (CheckForEmptyLabel())
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < mapSize; i++)
+                {
+                    for (int j = mapSize - 1; j >= 0; j--)
+                    {
+                        if (labelsMap[i, j].Text != string.Empty)
+                        {
+                            for (int k = j - 1; k >= 0; k--)
+                            {
+                                if (labelsMap[i, k].Text != string.Empty)
+                                {
+                                    if (labelsMap[i, j].Text == labelsMap[i, k].Text)
+                                    {
+                                        return false;
+                                    }
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
+        private bool MoveUpBan()
+        {
+            if (CheckForEmptyLabel())
+            {
+                return false;
+            }
+            else
+            {
+                for (int j = 0; j < mapSize; j++)
+                {
+                    for (int i = 0; i < mapSize; i++)
+                    {
+                        if (labelsMap[i, j].Text != string.Empty)
+                        {
+                            for (int k = i + 1; k < mapSize; k++)
+                            {
+                                if (labelsMap[k, j].Text != string.Empty)
+                                {
+                                    if (labelsMap[i, j].Text == labelsMap[k, j].Text)
+                                    {
+                                        return false;
+                                    }
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
+        private bool MoveDownBan()
+        {
+            if (CheckForEmptyLabel())
+            {
+                return false;
+            }
+            else
+            {
+                for (int j = 0; j < mapSize; j++)
+                {
+                    for (int i = mapSize - 1; i >= 0; i--)
+                    {
+                        if (labelsMap[i, j].Text != string.Empty)
+                        {
+                            for (int k = i - 1; k >= 0; k--)
+                            {
+                                if (labelsMap[k, j].Text != string.Empty)
+                                {
+                                    if (labelsMap[i, j].Text == labelsMap[k, j].Text)
+                                    {
+                                        return false;
+                                    }
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
+        private bool EndGame()
+        {
+            if (!MoveRightBan())
+            {
+                return false;
+            }
+            if (!MoveLeftBan())
+            {
+                return false;
+            }
+            if (!MoveDownBan())
+            {
+                return false;
+            }
+            if (!MoveUpBan())
+            {
+                return false;
             }
 
             return true;
