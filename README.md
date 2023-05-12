@@ -13,3 +13,8 @@
 4. Работа с файловой системой.
 5. Работа с JSON.
 6. Работа с LINQ.
+
+## Скачивание и установка
+* Для установки игры на свой ПК, скачайте файл Game2048Setup.exe по ссылке: 
+https://github.com/RusyaevAleksandr/Game2048AppDesktop/tree/master/installator/2048%20Setup
+* Следуйте подсказкам при установке приложения.
