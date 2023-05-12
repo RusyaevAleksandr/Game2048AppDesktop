@@ -442,19 +442,21 @@ namespace Game2048App
 
         private bool EndGame()
         {
-            if (CheckForEmptyLabel())
+            if (!MoveRightBan())
             {
                 return false;
             }
-            for (int i = 0; i < mapSize - 1; i++)
+            if (!MoveLeftBan())
             {
-                for (int j = 0; j < mapSize - 1; j++)
-                {
-                    if (labelsMap[i, j].Text == labelsMap[i, j + 1].Text || labelsMap[i, j].Text == labelsMap[i + 1, j].Text)
-                    {
-                        return false;
-                    }
-                }
+                return false;
+            }
+            if (!MoveDownBan())
+            {
+                return false;
+            }
+            if (!MoveUpBan())
+            {
+                return false;
             }
 
             return true;
