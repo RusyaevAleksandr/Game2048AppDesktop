@@ -43,6 +43,7 @@
             tableLayoutPanelTop = new TableLayoutPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
             infoTextLabel = new Label();
+            licenseToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             tableLayoutPanelTop.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -116,7 +117,7 @@
             // 
             // helpToolStripMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rulesGameToolStripMenuItem });
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { rulesGameToolStripMenuItem, licenseToolStripMenuItem });
             helpToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             helpToolStripMenuItem.ForeColor = Color.Sienna;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -216,6 +217,14 @@
             infoTextLabel.TabIndex = 0;
             infoTextLabel.Text = "Соединяй числа и получи плитку 2048!";
             // 
+            // licenseToolStripMenuItem
+            // 
+            licenseToolStripMenuItem.ForeColor = Color.Sienna;
+            licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
+            licenseToolStripMenuItem.Size = new Size(193, 26);
+            licenseToolStripMenuItem.Text = "Лицензия";
+            licenseToolStripMenuItem.Click += licenseToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -260,5 +269,6 @@
         private TableLayoutPanel tableLayoutPanelTop;
         private TableLayoutPanel tableLayoutPanel1;
         private Label infoTextLabel;
+        private ToolStripMenuItem licenseToolStripMenuItem;
     }
 }
